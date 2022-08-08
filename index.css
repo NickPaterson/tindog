@@ -163,10 +163,10 @@ header img {
     box-shadow: 1px 5px 14px hsla(161, 94%, 14%, 0.1);
 }
 .reject {
-    background-image: url(/images/icon-cross.png);
+    background-image: url(images/icon-cross.png);
 }
 .like {
-    background-image: url(/images/icon-heart.png);
+    background-image: url(images/icon-heart.png);
 }
 
 .end-message {
@@ -238,10 +238,10 @@ header img {
 /* like = left 
    rejcet = right */
 .stamp-left {
-    background-image: url(/images/badge-like.png);
+    background-image: url(images/badge-like.png);
 }
 .stamp-right {
-    background-image: url(/images/badge-nope.png);
+    background-image: url(images/badge-nope.png);
 }
 
 .stamp-left, .stamp-right {

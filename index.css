@@ -1,0 +1,276 @@
+
+/* -------------------
+    TYPOGRAPHY
+   =================== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #FFF;
+    height: 100vh;
+}
+.profile p {
+    font-size: 1.5rem;
+}
+.profile h2, .profile h2 + p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.profile h2::after {
+    content: ',\00a0';
+}
+
+.bio {
+    font-size: 1.5rem;
+    color: #b7b7b7;
+    margin: 0;
+
+}
+
+/* -------------------
+    DEVICES 
+   =================== */
+
+/* device phone */
+.device {
+    position: relative;
+    width: 360px;
+    height: 640px;
+    margin: auto;
+    border: 16px black solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+    overflow: hidden;
+    }
+    
+    /* The horizontal line on the top of the device */
+    .device:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+    }
+    
+    /* The circle on the bottom of the device */
+    .device:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+    }
+    
+    /* The screen (or content) of the device */
+.device .content {
+    width: 360px;
+    height: 640px;
+    background: white;
+    }
+
+
+/* -------------------
+    FLEX LAYOUT
+   =================== */
+
+.flex {
+    display: flex;
+}
+.direction-row {
+    flex-direction: row;
+}
+.direction-col {
+    flex-direction: column;
+}
+
+/* -------------------
+    LAYOUT
+   =================== */
+body {
+    background-color: #f3eaea;
+}
+
+
+/* header layout  */
+header .container {
+    height: 81px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+header img {
+    height: 42px;
+    margin: 0 17px;
+}
+
+/* profile layout  */
+.profile-container {
+    animation: fadeIn 1s;
+    border-radius: 0 0 10px 10px;
+    min-height: 500px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.profile img {
+    width: 98%;
+    height: 100%;
+    max-height: 870px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 15px;
+    order: -1;
+}
+.profile-info {
+    margin-top: -115px;
+    padding: 0 20px;
+}
+
+.profile-btns {
+    justify-content: center;
+}
+.profile-btns .btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #FFF;
+    border: none;
+    box-shadow: 1px 5px 14px hsla(0, 0%, 0%, 0.15);
+    margin: 3px 20px;
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+.profile-btns .btn:hover {
+    background-color: hsla(161, 100%, 42%, 0.1);
+    box-shadow: 1px 5px 14px hsla(161, 94%, 14%, 0.1);
+}
+.reject {
+    background-image: url(/images/icon-cross.png);
+}
+.like {
+    background-image: url(/images/icon-heart.png);
+}
+
+.end-message {
+    font-size: 1.2rem;
+    color: #000;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* -------------------
+    LIKE NOPE STAMP
+   =================== */
+
+.stamp {
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    transform: rotate(-35deg);
+    opacity: 0;
+}
+.stamp img {
+    width: 150px;
+    height: 75px;
+}
+
+/* -------------------
+    SWIPE LEFT / RIGHT 
+   =================== */
+.swipe-left, .swipe-right {
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+.swipe-left {
+    -webkit-animation-name: swipe-left;
+    animation-name: swipe-left;
+}
+.swipe-right {
+    -webkit-animation-name: swipe-right;
+    animation-name: swipe-right;
+}
+
+@-webkit-keyframes swipe-left {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(-130%) rotate(-35deg);
+        transform: translateX(-130%) rotate(-35deg);
+    }
+}
+
+@-webkit-keyframes swipe-right {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(130%) rotate(35deg);
+        transform: translateX(130%) rotate(35deg);
+    }
+}
+
+/* -------------------
+    STAMP LIKE / NOPE 
+   =================== */
+/* like = left 
+   rejcet = right */
+.stamp-left {
+    background-image: url(/images/badge-like.png);
+}
+.stamp-right {
+    background-image: url(/images/badge-nope.png);
+}
+
+.stamp-left, .stamp-right {
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    height: 75px;
+    width: 150px;
+    background-size: cover;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+@-webkit-keyframes pulse{
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity:.50;
+      transform-origin: 50% 50%;
+      transform: rotate(10deg) scale(5);
+      transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    }
+    100%{
+      opacity:1;
+      transform: rotate(-35deg) scale(1);
+    }
+  }
